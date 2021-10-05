@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+   <!-- <div id="div1">
+        <p id="p1">This is a paragraph.</p>
+        <p id="p2">This is another paragraph.</p>
+    </div>
+
+    <h1 onclick="changeText(this)">Click on this text!</h1>
+    <h2>resultado</h2>
+   <button onclick="mover()">Clic aquí</button>
+
+   <div class="main-box">
+       <div class="mini-box"></div>
+   </div>-->
+
+   <input type="button" value="Volver" onclick="volver()">
+   <input type="button" value="Siguiente" onclick="siguiente()">
+
+  
+</body>
+<script>
+    function volver(){
+        window.history.back();
+    }
+    function seguir(){
+        window.history.forward();
+    }
+
+    /*let parent = document.getElementById("div1");
+    let child = document.getElementById("p1");
+    child.removeChild(child);
+
+
+    var myText = document.querySelector("h1").firstChild.nodeValue;
+    console.log(myText);
+    console.log(document.querySelector("h1").firstChild.nodeType)
+
+    
+    function mover(){
+        let caja=document.querySelector('.mini-box');
+        let posicion=0;
+        let id=setInterval(frame,5); //llama al función cada 5 segundos.
+       function frame() { 
+           if(posicion==465){
+               clearInterval(id);
+           }else{
+               posicion++;
+               caja.style.top=posicion+'px';
+               caja.style.left=posicion+'px';
+           }
+        }
+    }
+
+
+    function changeText(id) {
+        id.innerHTML = "Ooops!";
+    }*/
+
+        //document.cookie = "username=Aziz Elouas; expires=Thu, 18 Dec 2021 12:00:00 UTC; path=/";
+        //let x = document.cookie;
+       // console.log(x)
+
+       //document.cookie = "username=Aziz Elouas; expires=Thu, 18 Dec 2012 12:00:00 UTC; path=/";
+        //creación de cookie
+        function setCookie(cname,cvalue,expdays){
+            let d=new Date();
+             d.setTime(d.getTime()+(expdays*24*60*60*1000));
+            let expiress="expiress="+d.toUTCString();
+            document.cookie=cname+"="+cvalue+";"+expiress;
+        }
+
+
+        function getCookie(cname){
+            let name=cname+"=";
+            let ca=document.cookie.split(';');
+            for(let i=0;i<ca.length;i++){
+                let linea=ca[i];
+                while(linea.charAt(0)==' '){
+                    linea=linea.substring(1);
+                }
+                if(linea.indexOf(name)==0){ //indexOf devuelve 0 si elemento esta
+                    //linea tiene: username=aziz
+                    //name.length: 9
+                    //linea.length: 13
+                    //  console.log('username=aziz'.substring(9,13)) //aziz
+                    return linea.substring(name.length,linea.length)    
+                }
+            }
+            return "";
+        }
+
+        function checkCookie(){
+            let user=getCookie('username');
+            if(user!=""){
+                alert("Hola"+user);
+            }else{
+                user =prompt("Introduzca su nombre","");
+                if(user!="" && user!=null){
+                    setCookie("username",user,365);
+                }
+            }
+        }
+
+        checkCookie();
+
+        
+      
+        
+       
+    
+   
+
+</script>
+<style>
+    .main-box{
+        margin-top: 20px;
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        background-color: aqua;
+    }
+
+    .mini-box{
+        width: 35px;
+        height: 35px;
+        position: absolute;
+        background-color: brown;
+    }
+
+    
+
+</style>
+
+</html>
