@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<head>
+    <title>Memory</title>
+    <meta charset="utf-8"/>
+    <script type="text/javascript" src=""></script>
+</head>
+<body>
+    <h3>Memory</h3>
+    <h4 id="score">Score: 0</h4>
+    <div id="display">
+
+    </div>
+
+</body>
+<script>
+
+    var intentos =20;
+    window.onload=function(){
+        document.getElementById("score").innerHTML="Score: 0  ||  Intentos: "+intentos;
+    }
+    var images=["images/circulo.jpg","images/triangulo.jpg","images/cuadrado.jpg","images/ovalo.jpg",
+    "images/rectangulo.jpg","images/rumbo.jpg","images/hexagono.jpg",
+    "images/paralelologram.jpg","images/pentagono.jpg","images/octaguno.jpg",
+    "images/circulo.jpg","images/triangulo.jpg","images/cuadrado.jpg","images/ovalo.jpg",
+    "images/rectangulo.jpg","images/rumbo.jpg","images/hexagono.jpg",
+    "images/paralelologram.jpg","images/pentagono.jpg","images/octaguno.jpg"
+    ];
+   
+    
+     for(var i=0;i<images.length;i++){
+            var image = document.createElement("img");
+            var image_default=document.createElement("img");
+            image_default.src="images/back.jpg";
+            image.src=images[i];
+         
+            
+            image_default.setAttribute("class", image.getAttribute("src"));
+            image_default.setAttribute("id", image.getAttribute("src")+i);
+            image_default.setAttribute("onclick", "play(this.className,"+i+")");
+            document.getElementById("display").appendChild(image_default);
+            
+        }
+        
+        var contador=0;
+        var clickadas=[];
+        var posicion=[];
+        var sinAcertar=[];
+
+        function play(id,pos){
+
+          
+
+            clickadas.push(id);
+            posicion.push(pos);
+          
+                  
+          
+            var pics=document.getElementsByClassName(id);
+           // pics[0].setAttribute("id",id+pos);
+            //alert(pics[0].getAttribute("id"));
+            var primeraFoto= document.getElementById(id+pos);
+            primeraFoto.src=id;
+            sinAcertar.push(primeraFoto.getAttribute("id"));
+
+            if(clickadas[1]==clickadas[0] && posicion[0]!=pos ){
+                for(var x=0;x<pics.length;x++){
+                        if(id==images[pos]){
+                            pics[x].src=images[pos];
+                           
+                            
+                           
+                        }
+                       
+                }
+                    contador++;
+                    setTimeout(function(){
+                        pics[0].src="images/vacio.jpg";
+                        pics[1].src="images/vacio.jpg";
+                    },2000);
+                    
+           
+                
+                clickadas=[]
+                 posicion=[];
+                 sinAcertar=[];
+              
+                
+            }
+           else{
+                if(clickadas[0]!=undefined && clickadas[1]!=undefined){
+                   intentos--;
+                   setTimeout(function(){
+                        for(var x=0;x<sinAcertar.length;x++){
+                            document.getElementById(sinAcertar[x]).src="images/back.jpg";
+                        }
+                    },2000);
+                }
+                if(clickadas.length==2){
+                    clickadas=[]
+                    posicion=[];                
+                        
+                }  
+            }
+              
+            document.getElementById("score").innerHTML="Score: "+contador+ " ||  Intentos: "+intentos;
+
+            if(intentos==0){
+                    alert("You lose :( ");
+                    location.reload(true);
+                
+            }if(contador==10){
+                //document.getElementById("score").innerHTML="Score: "+contador+ " ||  Intentos: "+intentos""";
+                document.getElementById("display").innerHTML="<br/><br/><h3>You win :) </h3>"+
+                "<input type='button' value='Play again' onclick='javascript:location.reload(true)'/> ";
+
+            }
+        }
+
+
+          
+                
+               
+          
+
+        
+
+
+        
+        
+
+
+        
+        
+      
+    
+</script>
+<style>
+    body{
+        width:750px;
+        margin: auto;
+    }
+    #display{
+        width: 500px;
+    }
+    .caja{
+        float: left;
+        width: 95px;
+        height: 95px;
+        background-color: rgb(23, 197, 209);
+        margin: 1px;
+    }
+    input{
+        background-color:rgb(23, 197, 209);
+        border: 0;
+        padding: 10px;
+        color: #ffffff;
+        font-size: 16px;
+    }
+    img{
+        margin: 1px;
+    }
+
+ 
+</style>
+
+</html>
