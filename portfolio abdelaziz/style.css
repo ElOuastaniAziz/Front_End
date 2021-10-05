@@ -1,0 +1,388 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+.container {
+    width:100%;
+}
+
+header{
+    height: 10em;
+    border-bottom:3px solid #1A182E;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color:#3769A7;
+}
+header .inside_header{
+
+        height: 10em;
+        border-bottom:3px solid #1A182E;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color:#3769A7;
+        width:80%;
+        margin: auto;
+}
+
+
+
+ .logo{
+    background-color: #1A182E/*#ABAD8B*/;
+    width: 8em;
+    font-family: logoFuente;
+    border-radius: 100%;
+    height: 8em;
+    color:#fff;
+    margin:15px 0 0px 30px;
+    border:1px solid  #1A182E;
+}
+ .logo h1{
+    margin:40px 0 0 15px;
+    position: absolute;
+}
+ .logo p{
+    margin:73px 0 0 15px;
+    position: absolute;
+}
+
+/* MENU*/
+header nav{
+    width:12em;
+    height: 2em;
+    margin: 55px 10px 0 0;
+    font-size: 22px;
+    font-family: navFuente;
+}
+
+header nav #here{
+    border-bottom:2px solid #1A182E;;
+    
+}
+header nav ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style: none;
+}
+header nav ul li a{
+    text-decoration: none;
+    color:#fff;;
+    margin-top: 25px;
+    padding:8px;
+    
+    
+}
+header nav ul li {
+    margin-top: 8px;
+  
+}
+
+header nav ul li :hover{
+    border-bottom:2px solid  #fff;
+    opacity: 0.7;
+    
+}
+
+
+main{
+    width:100%;
+    margin:30px 0 30px 0;
+}
+main article{
+    width: 80%;
+    margin:20px 0 30px 1px;
+    margin: auto;
+ 
+}
+main article .perfil{
+    /*width: 600px;*/
+    margin: auto;
+   /* background-color: #ABAD8B;*/
+}
+main article .perfil img{
+    margin: 5px 0 8px 35%;
+    width: 20em;
+    height: 13.8em;
+     border-radius: 50%;
+     box-shadow: 0px 1px 0px 0px #ABAD8B; 
+    opacity: 0.9;
+
+}
+main article .perfil h1{
+    font-family: navFuente;
+    text-align: center;
+    color:#1A182E;
+    
+}
+main article .perfil p{
+       font-family: logoFuente;
+    text-align: center;
+    color: #4d4d4d;
+    font-size:20px;
+    
+}
+main section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;;
+    margin: auto;
+    width:79%;
+    margin-top:35px;
+}
+main section #col{
+    width: 250px;
+    border-radius: 8%;
+    border-right:1px solid grey;    
+
+}
+main section #col h1{
+    text-align: center;
+    font-family: navFuente;
+    font-size: 17px;
+    color:#1A182E;
+}
+main section #col p{
+    text-align: center;
+    text-align: justify;
+    margin: 8px;
+    font-family: logoFuente;
+}
+main section #col img{
+    margin:10px 0 0 30%;
+    width: 100px;
+
+}
+main section #col img:hover{
+   
+    opacity: 0.8;
+
+}
+main section #col .entrar{
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    color: #fff;
+    background-color: #1A182E;
+    font-size: 15px;
+    font-family: navFuente;
+}
+
+main section #col  a{
+    text-decoration: none;
+    
+
+}
+main section #col  .entrar:hover{
+   background-color:#3769A7;
+
+}
+main section #col .entrar h3{
+    margin: 4px 0 0 105px;
+    position: absolute;
+   
+}
+
+footer{
+    height: 4em;
+    display: flex;
+    flex-direction: row;
+    border-top:2px solid #3769A7;
+    justify-content: space-around;
+    background-color:#1A182E;
+    clear: both;
+}
+footer .inside_footer{
+    height: 4em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color:#1A182E;
+    width: 80%;
+    margin: auto;
+}
+
+footer ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 10px;
+    width:350px;
+    height: 40px;
+}
+footer p{
+    margin: 10px;
+    width: 500px;
+    color:#fff;
+    margin-top: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+footer ul {
+    margin:10px 40px 0 40px;
+    border-right:1px solid #E1DDBC;
+    border-left:1px solid #E1DDBC;
+}
+footer ul li{
+    list-style: none;
+}
+
+footer ul li img{
+    width: 2.5em;
+    opacity: 0.7;
+    
+}
+footer ul li a:hover{
+    opacity: 0.9;
+    
+}
+
+/* TIPO DE FUENTE*/
+@font-face {
+    font-family: "logoFuente";
+    src: url("Catalunya demo.ttf");
+  }
+@font-face {
+    font-family: "navFuente";
+    src: url("Imperfecta.ttf"); 
+}
+
+
+/*CONTACT*/
+.contact{
+    width:80%;
+    margin: auto;
+}
+.contact form,h2,p{
+    margin-left:30px;
+}
+.contact form input{
+    width: 350px;
+    height: 35px;
+    margin: 10px 0 20px;
+    border:0;
+    background-color:gainsboro;
+    border:1px solid #3769A7;
+    
+}
+.contact form #area{
+    height: 200px;
+    width: 500px;
+    border:0;
+    background-color: gainsboro;
+    border:1px solid #3769A7;
+}
+.contact form #enviar{
+    background-color:#1A182E;
+    color:#fff;
+    border: 0;
+    width: 200px;
+    height: 45px;
+}
+.contact form input:focus{
+    border:1px solid #1A182E;
+}
+
+/* ABOUT */
+main .text_about{
+    width:100%;
+    text-align: center;
+    margin-bottom: 80px;
+  
+    
+}
+
+
+main .text_about h2 {
+    font-family: fuente3;
+    font-size: 30px;
+    color: #001f3f;
+}
+
+main .text_about p {
+    color:#001f3f;
+    font-family:logoFuente;
+    font-size:20px;
+     color: #001f3f;
+}
+
+
+main .text_about img{
+    margin: 5px 0 8px 0px;
+    width: 20em;
+    height: 13.8em;
+     border-radius: 50%;
+     box-shadow: 0px 1px 0px 0px #ABAD8B; 
+    opacity: 0.9;
+
+}
+
+
+
+main .text_about ul{
+    width: 200px;
+    list-style: none;
+    margin: auto;
+}
+
+main .text_about ul li{
+    margin-top: 20px;
+    display: inline-block;
+}
+
+main .text_about ul li a{
+    padding: 5px;
+    background: #001f3f;
+    text-decoration: none;
+    color: #FFF;
+}
+
+main .text_about ul li a:hover{
+    background: white;
+    color:#001f3f;
+    border-bottom: 2px solid #001f3f;
+}
+
+
+/* MODULO*/
+main .modulo{
+    width: 80%;
+    margin:auto;
+}
+main .modulo h3{
+    color:#001f3f;
+    margin-left:50px ;
+    text-decoration: underline;
+
+    
+}
+main .modulo #proyecto{
+    color:#001f3f;
+    margin:50px  0 50px 50px;
+    width: 450px;
+    float: left;
+    text-align: justify;
+    
+}
+main .modulo #proyecto p{
+    margin-left:-5px;
+    
+}
+main .modulo #proyecto h4{
+    color: #3769A7;
+    text-align: center;
+}
+main .modulo #proyecto img{
+    width: 450px;
+    margin:9px 0 10px 0;
+    
+}
+main .modulo .barra{
+    border-left:1px  solid #001f3f;
+    height: 500px;
+    float: left;
+    margin-left:40px;
+    opacity: 0.5;
+    
+}
