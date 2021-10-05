@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <title>Mundo Deportivo: utilidades</title>
+        <meta charset="utf-8"/>
+            <link type="text/css"  rel= stylesheet href="style.css"/>
+        <script type="text/javascript" src="js/horari.js"></script>
+        <script type="text/javascript" src="js/imc.js"></script>   
+        <script type="text/javascript" src="js/fcm.js"></script>
+        <script type="text/javascript" src="js/categoria.js"></script>
+        <script type="text/javascript" src="js/practica2.js"></script> 
+    
+     
+        
+    </head>
+       <script language="javascript" type="text/javascript">
+
+             function lanzarAvisoLegal(){
+                      window.open("mensaje.html" , "ventana1" , "width=1000,height=600,scrollbars=NO");
+                }
+                    function cerrarVentana(){
+                      window.close();
+                }
+           //CREAR MODAL CON EL CSS PARA LANZAR EL MENSAJE DE BIENVENIDA DEL SIGUIENTE EJERECICIO
+    </script>
+    <header>
+        <div id="inside_header">
+            <h1><a href="index.html"><img src="images/log2.png" alt="logo"/></a></h1> 
+               <div id="calendario">
+                <h3 class="t_anyo"></h3>
+                <h2 class="t_dia"></h2>
+                <h4 class="t_mes"></h4>
+            </div>
+        </div>
+        <nav>
+            <div id="inside_nav">
+                <ul>
+                 <li><a href="index.html">Home</a></li>
+                 <li style="border-bottom: 3px solid green;"><a href="utilidades.html">Utilidades</a></li>
+                </ul>
+            </div>
+        
+     </nav>
+     </header>
+   
+    <body>
+    <div id="container">
+         <aside>
+            <h2>Utilidades</h2>
+            <ul>
+                <li><button onclick="getImc()">Calculadora IMC</button></li>
+                <li><button onclick="getFcm()">Calculadora FCM</button></li>
+                <li><button onclick="getCategoria()">Calculadora de categoria</button></li>
+                <li><button onclick="getHorario()">Horario</button></li>
+            </ul>
+        </aside>
+    <main id="contenido">
+        <p style='color:green;'>Bienvenid@,<br/>Nuestra web le pone a su disposición un kit de herramientas que esperamos que le servan !!</p>
+    </main>
+       
+    </div>
+    </body>
+  <footer>
+      <p id="texto_footer"></p>
+         <p id="aviso_legal"> <a href="" onclick="lanzarAvisoLegal()">Aviso legal</a></p>
+  </footer>
+    <style>
+       #contenido ul{
+           font-size: 18px;
+            margin-left:50px;
+           background-color:#E4FFDE;
+            list-style: none;
+           color:#34a948;
+        }
+        #contenido h3{
+           font-size: 18px;
+            margin-left:50px;
+            color:#34a948;
+        }
+        #contenido ul li{
+            margin:5px 0 5px 0;
+            padding: 5px;
+            border-bottom: 1px solid grey;
+            
+        }
+        ul #li_selected{
+            color:#fff;
+            background-color:#34a948 !important;
+            -webkit-box-shadow: 1px 0px 5px 1px rgba(0,0,0,0.75);
+            -moz-box-shadow: 1px 0px 5px 1px rgba(0,0,0,0.75);
+            box-shadow: 1px 0px 5px 1px rgba(0,0,0,0.75);
+            border:0px !important;;
+        }
+        table{
+            border:1px solid grey;
+        }
+        th{
+            border:1px solid grey;
+            background-color: #34a948 ;
+            color: #fff;
+        }
+         td{
+            border:1px solid grey;
+            background-color: #E4FFDE ;
+            color:darkgreen;
+        }
+        
+    </style>
+      
+</html>

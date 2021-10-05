@@ -1,0 +1,345 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background-color:#F5F5F5;
+}
+
+header{
+     height: 11em;
+     background-color:#E4FFDE  ;
+}
+
+header #inside_header{
+    width: 80%;
+    margin: auto;
+}
+header #inside_header img{
+    width: 150px;
+    
+}
+
+header h1{
+    margin: 40px 0 0 0;
+    position: absolute;
+    color: #fff;
+}
+nav{
+    background-color:#34a948; /*rgb( 16, 45, 61 );*/
+    height: 2.3em;
+    border-bottom:2px solid #fff ;
+}
+header #inside_nav{
+    width: 80%;
+    margin: auto;
+}
+
+
+nav ul {
+    list-style: none;
+    margin:0px 4px 0 0;
+    position: absolute;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+nav ul li{
+    color:#fff;
+    border-right: 1px solid #fff ;
+    border-left: 1px solid #fff ;
+    height: 37px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+nav ul li a{
+    text-decoration: none;
+    color:#fff;
+     padding: 8px 8px 8px 0;
+    margin-left:10px;
+}
+nav ul li:hover{
+    display: inline-block;
+    background: #fff;
+    background-color:#fff;
+    color: rgb( 16, 45, 61 ); 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+nav ul li a:hover{
+    color: rgb( 16, 45, 61 ); 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#container{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin:auto;
+}
+main{
+    margin: 20px 0 30px 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 700px;
+    color:#34a948;
+    border-right:2px solid #34a948;
+    min-height: 400px;
+}
+
+main h2{
+    margin: 0 0 7px;
+    color:#34a948;
+}
+main p{
+    margin:6px;
+    text-align: justify;
+    width: 650px;
+}
+
+main img{
+    width:650px;
+    margin: 3px 0 5px  5px;
+}
+
+
+/*ASIDE*/
+
+aside{
+    margin: 20px 0 30px 0;
+    border-left:1px solid grey;
+    width: 300px;
+    color:aqua;
+    border:1px solid #34a948;
+    
+}
+
+aside #aside_post{
+    text-align: justify;
+    color:#34a948;
+    margin: 12px;
+    border-bottom: 1px solid grey;
+}
+
+aside #aside_post h4{
+    margin: 8px 0 8px  0;
+    color: green;
+}
+aside a{
+    text-decoration: none;
+}
+aside ul li{
+    margin:15px 0 15px 60px;
+       list-style: none; 
+}
+aside button{
+    width:80%;
+    height: 38px;
+    
+}
+
+
+
+aside h2{
+    background: #34a948;
+    padding:5px;
+    color: #fff;
+}
+
+
+aside #aside_post  img{
+    width: 280px;
+}
+
+aside button{
+    background-color: #E4FFDE ;
+    border: 2px solid #34a948;
+}
+
+
+footer{
+    background-color: #34a948;
+    height: 4em;
+    display: flex;
+    justify-content: space-evenly;
+    bottom: 0;
+}
+
+footer p{
+    margin: 45px 0 0 30px;
+    margin-top: 20px;
+    position: absolute;
+    font-family: Arial, Helvetica, sans-serif;
+    color:#fff;
+    font-size: 16px;
+    text-align: justify;
+}
+
+/* PRACTICA 2*/
+
+header #calendario{
+    float: left;
+    text-align: center;
+    background-color:#379a57;
+    margin:2.3em 5em 0 55em;
+    width: 7.5em;
+    border:2px solid grey;
+    color:#fff;
+}
+header #calendario .t_dia{
+    border:2px solid grey;
+    background-color: #9cff90;
+    padding:0.1em;
+    font-size: 2.6em;
+    color:black !important;
+}
+
+footer #aviso_legal{
+   margin-top: 42px;
+}
+
+/*MODAL*/
+.modal-window {
+  position: fixed;
+  background-color: rgba(200, 200, 200, 0.75);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.modal-window:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-window>div {
+  width: 400px;
+  position: relative;
+  margin: 10% auto;
+  padding: 2rem;
+  background: #fff;
+  color: #444;
+}
+
+.modal-window header {
+  font-weight: bold;
+}
+
+.modal-close {
+  color: #aaa;
+  line-height: 50px;
+  font-size: 80%;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 70px;
+  text-decoration: none;
+}
+
+.modal-close:hover {
+  color: #000;
+}
+
+.modal-window h1 {
+  font-size: 150%;
+  margin: 0 0 15px;
+}
+
+/*Login*/
+
+div #form_login label{
+    color: green;
+    margin-top: 0.5em;
+}
+div #form_login #nombre,#pass,label{
+    width: 80%;
+    margin: 0.5em;
+    height:2em;
+}
+div #form_login #acceder{
+    width: 30%;
+    margin: 0.5em;
+    height:2em;
+    background-color: #34a948;
+    border: 0;
+    color: #fff;
+}
+
+/*SOCIO*/
+/*menu socio*/
+#menu_vertical{
+    background-color:#E4FFDE;
+    width:210px;
+    margin: 20px;
+    text-align: center;
+    color: black;
+}
+#menu_vertical li{
+    list-style: none;
+    width:190px;
+    padding: 10px;
+    border-bottom:grey 1px solid;
+
+}
+#menu_vertical li a{
+    text-decoration: none;
+    padding: 10px;
+    color: black;
+    font-size: 18px;
+}
+#menu_vertical li:hover{
+    background-color:#34a948;
+    color: white;
+}
+#menu_vertical li a:hover{
+    color: white;
+}
+
+form {
+    width: 710px;
+    margin-top:45px;
+ 
+}
+
+form #ul_col2{
+    float: right;
+    margin-top: -250px;
+
+}
+form #ul_col1,#ul_col2{
+    width:320px;
+}
+
+
+form label {
+    margin-left:-1px;
+}
+form input{
+    width: 350px;
+    margin: 0 0 10px 0;
+    height: 30px;
+}
+
+form #dar_alta{
+    background-color:#34a948;
+    width: 150px;
+    height: 30px;
+    border:0;
+    color:white;
+    font-size: 18px;
+}

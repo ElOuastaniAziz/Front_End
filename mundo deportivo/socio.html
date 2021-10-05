@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <title>Mundo Deportivo: Socio</title>
+        <meta charset="utf-8"/>
+            <link type="text/css"  rel= stylesheet href="style.css"/>
+        <script type="text/javascript" src="js/horari.js"></script>
+        <script type="text/javascript" src="js/imc.js"></script>   
+        <script type="text/javascript" src="js/fcm.js"></script>
+        <script type="text/javascript" src="js/categoria.js"></script>
+        <script type="text/javascript" src="js/practica2.js"></script> 
+    
+     
+        
+    </head>
+       <script language="javascript" type="text/javascript">
+
+             function lanzarAvisoLegal(){
+                      window.open("mensaje.html" , "ventana1" , "width=1000,height=600,scrollbars=NO");
+                }
+                    function cerrarVentana(){
+                      window.close();
+                }
+           //CREAR MODAL CON EL CSS PARA LANZAR EL MENSAJE DE BIENVENIDA DEL SIGUIENTE EJERECICIO
+    </script>
+    <header>
+        <div id="inside_header">
+            <h1><a href="index.html"><img src="images/log2.png" alt="logo"/></a></h1> 
+               <div id="calendario">
+                <h3 class="t_anyo"></h3>
+                <h2 class="t_dia"></h2>
+                <h4 class="t_mes"></h4>
+            </div>
+        </div>
+        <nav>
+            <div id="inside_nav">
+                <ul>
+                 <li><a href="index.html">Home</a></li>
+                 <li><a href="utilidades.html">Utilidades</a></li>
+                 <li style="border-bottom: 3px solid green;"><a href="socio.html">Socio</a></listyle="border-bottom: 3px solid green;"></li>
+                </ul>
+            </div>
+        
+     </nav>
+     </header>
+   
+    <body>
+    <div id="container">
+        <div id="menu_vertical">
+            <ul >
+                <li><a href="#" id="alta">Dar de alta</a></li>
+                <li><a href="#" id="baja">Dar de baja</a></li>
+                <li><a href="#" id="modificar">Modificar datos</a></li>
+                <li><a href="#"  id="ver_todos">Ver todos socios</a></li>
+                <li><a href="#"  id="buscar_dni">Buscar por DNI</a></li>
+                <li><a href="#"  id="buscar_catergoria">Buscar por categoria</a></li>
+                <li><a href="#"  id="buscar_localidad">Buscar por localidad</a></li>
+             
+            </ul>
+        </div>
+        <form onsubmit="new Socio().displayAlta()" id="formulario">
+            <div id="ul_col1">
+                <label for="numero_socio">Número de socio: </label>
+                <input type="text" id="numero_socio" name="numero_socio" placeholder="Escribe el número de socio" required/>
+                <label for="dni_socio">DNI: </label>
+                <input type="text" id="dni_socio" name="dni_socio"  placeholder="Escribe el DNI de socio" required/>
+                <label for="nombre_socio">Nombre: </label>
+                <input type="text" id="nombre_socio" name="nombre_socio"  placeholder="Escribe el nombre de socio" required/>
+                <label for="apellidos_socio">Apellidos: </label>
+                <input type="text" id="apellidos_socio" name="apellidos_socio"  placeholder="Escribe los apellidos de socio" required/>
+            </div>
+            <div id="ul_col2">
+                <label for="fecha_nacimiento_socio">Fecha de nacimiento: </label>
+                <input type="date" id="fecha_nacimiento_socio" name="fecha_nacimiento_socio"/>
+                <label for="localida_socio">Localidad: </label>
+                <input type="text" id="localidad_socio" name="localidad_socio"  placeholder="Escribe la localidad de socio" required/>
+                <input type="submit" id="dar_alta" value="Alta"/> 
+             </div>
+        </form>
+        <form onsubmit="" id="formulario_baja" style="display: none;">
+            <div id="ul_col1">
+                <label for="numero_socio">Número de socio: </label>
+                <input type="text" id="numero_socio" name="numero_socio" placeholder="Escribe el número de socio" required/>
+                <label for="dni_socio">DNI: </label>
+                <input type="text" id="dni_socio" name="dni_socio"  placeholder="Escribe el DNI de socio" required/>
+                <input type="submit" id="dar_alta" value="Baja"/> 
+            </div>
+        </form>
+        <div id="display_resutado">
+
+
+        </div>
+       
+    </div>
+    </body>
+  <footer>
+      <p id="texto_footer"></p>
+         <p id="aviso_legal"> <a href="" onclick="lanzarAvisoLegal()">Aviso legal</a></p>
+  </footer>
+    <style>
+       #contenido ul{
+           font-size: 18px;
+            margin-left:50px;
+           background-color:#E4FFDE;
+            list-style: none;
+           color:#34a948;
+        }
+        #contenido h3{
+           font-size: 18px;
+            margin-left:50px;
+            color:#34a948;
+        }
+        #contenido ul li{
+            margin:5px 0 5px 0;
+            padding: 5px;
+            border-bottom: 1px solid grey;
+            
+        }
+        ul #li_selected{
+            color:#fff;
+            background-color:#34a948 !important;
+            -webkit-box-shadow: 1px 0px 5px 1px rgba(0,0,0,0.75);
+            -moz-box-shadow: 1px 0px 5px 1px rgba(0,0,0,0.75);
+            box-shadow: 1px 0px 5px 1px rgba(0,0,0,0.75);
+            border:0px !important;;
+        }
+        table{
+            border:1px solid grey;
+        }
+        th{
+            border:1px solid grey;
+            background-color: #34a948 ;
+            color: #fff;
+        }
+         td{
+            border:1px solid grey;
+            background-color: #E4FFDE ;
+            color:darkgreen;
+        }
+        
+    </style>
+    <script>
+        window.load=function(){
+            var divs= document.querySelect('form');
+            divs.style.visibility="hidden";
+            document.cookie = "username=John Doe";
+          
+                  
+
+        }
+
+     
+        //Objeto socio
+        function Socio(numero,dni,nombre,apellidos,fecha_nacimiento,localidad){
+
+            //propiedades
+            this.numero = numero || "";
+            this.dni=  dni || "";
+            this.nombre= nombre || "";
+            this.apellidos= apellidos || "";
+            this.fecha_nacimiento=  fecha_nacimiento || "";
+            this.localidad= localidad || "";
+
+            //métodos
+            this.displayAlta=function (){
+                document.getElementById("formulario").style.display="yes";
+                this.numero=document.querySelector("#numero_socio").value;
+                this.dni=document.querySelector("#dni_socio").value;
+                this.nombre=document.querySelector("#nombre_socio").value;
+                this.apellidos=document.querySelector("#apellidos_socio").value;
+                this.fecha_nacimiento=document.querySelector("#fecha_nacimiento_socio").value;
+                this.localidad=document.querySelector("#localidad_socio").value;
+                altaSocio(this.numero,this.dni,this.nombre,this.apellidos,this.fecha_nacimiento,this.localidad);
+             }
+
+            this.displayBuscarCategoria = function(){
+                /* for(var i=0;i<ah;i++){
+                     document.write();
+                 }*/
+             }
+
+            this.displayModificar=function(){
+                alert("test");
+                 
+            }
+
+            this.displayLocalidad=function(){
+                    return this.localidad;
+
+             }
+
+        }
+
+
+        //agregar socio
+         var listaSocios=[];
+         
+        function altaSocio(numero,dni,nombre,apellidos,fecha_nacimiento,localidad){
+            listaSocios=[new Socio(numero,dni,nombre,apellidos,fecha_nacimiento,localidad)];
+            //var myJSON = JSON.stringify(listaSocios);
+            //document.write(myJSON);
+     
+        }
+
+
+        //DAR DE BAJA
+        function displayBaja(numero,dni){
+                listaSocios.filter(function(valor,index,tabla){
+                    return valor.dni==dni;
+                });    
+        }
+
+
+        //display socios
+    
+        document.body.addEventListener("click",function(event){
+            if(!event)event=event.window; //en caso de internet explorer 
+            else if(event.target.id=="alta"){
+                document.getElementById("formulario").style.display="block";
+                document.getElementById("formulario_baja").style.display="none";
+            }else if(event.target.id=="baja"){
+                document.getElementById("formulario").style.display="none";
+                document.getElementById("formulario_baja").style.display="block";
+               
+            }else if(event.target.id=="modificar"){
+                document.getElementById("formulario").style.display="none";
+                document.getElementById("formulario_baja").style.display="none";
+            }else if(event.target.id=="ver_todos"){
+                document.getElementById("formulario").style.display="none";
+                document.getElementById("formulario_baja").style.display="none";
+              
+                var x = document.cookie;
+                alert(x);
+            }
+        });
+
+       
+    
+    </script>
+      
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <title>Mundo Deportivo: Home</title>
+            <link type="text/css"  rel= stylesheet href="style.css"/>
+               <script type="text/javascript" src="js/horari.js"></script>
+        <script type="text/javascript" src="js/imc.js"></script>   
+        <script type="text/javascript" src="js/fcm.js"></script>
+        <script type="text/javascript" src="js/categoria.js"></script>
+            <script type="text/javascript" src="js/practica2.js"></script> 
+          <meta charset="utf-8"/>
+      
+    </head>
+    <header>
+        <div id="inside_header">
+            <h1><a href="index.html"><img src="images/log2.png" alt="logo"/></a></h1> 
+             <div id="calendario">
+                <h3 class="t_anyo"></h3>
+                <h2 class="t_dia"></h2>
+                <h4 class="t_mes"></h4>
+            </div>
+        </div>
+        <nav>
+            <div id="inside_nav">
+                <ul>
+                 <li style="border-bottom: 3px solid green;"><a href="index.html">Home</a></li>
+                 <li><a href="utilidades.html">Utilidades</a></li>
+                </ul>
+            </div>
+        
+     </nav>
+     
+       
+     </header>
+   <script language="javascript" type="text/javascript">
+       
+                   function lanzarAvisoLegal(){
+                      window.open("mensaje.html" , "ventana1" , "width=1000,height=600,scrollbars=NO");
+                }
+                    function cerrarVentana(){
+                      window.close();
+                }
+       
+                var mensajeConstrasenya="";
+       
+                function procesarPassword(){
+                       var pass= document.getElementById("pass").value;
+                    //AQUI
+                       if(getLength(pass) && minMay(pass) && contieneCaracteres(pass) && !contieneNumero(pass)){
+                            mensajeConstrasenya="<p style='margin-left:7px'>Contraseña segura</p>";
+                        }else{
+                            mensajeConstrasenya="<p style='margin-left:7px; color:red'>Contraseña no segura</p>";
+                        }
+                
+                          
+                         document.getElementById("pass_label").innerHTML=mensajeConstrasenya;
+                 }
+       
+                function getLength(pass){
+                    var isOk=true;
+                     if(pass.length<8){
+                            isOk=false;
+                           // mensajeConstrasenya="<p style='color:red; margin-left:7px'>Contraseña: Muy corta</p>";
+
+                        }else if(pass.length>16){
+                            isOk=false;
+                            //mensajeConstrasenya="<p style='color:red; margin-left:7px'>Contraseña: Muy larga";
+
+                        }else{
+                            isOk=true;
+                        }
+                    return isOk;
+                }
+       
+                function minMay(pass){
+                    
+                    var min=pass.toUpperCase();
+                    var may=pass.toLowerCase();
+                    var conOk=true;
+                    if(min==pass){
+                        conOk=false;
+                       // mensajeConstrasenya+=" y "+"debe tener letra en miniscula";
+                    }else if(may==pass){
+                        conOk=false;
+                         // mensajeConstrasenya+=" y "+"debe tener letra en Mayuscula";
+                    }else if(may==pass && min==pass){
+                         //mensajeConstrasenya="<p style='margin-left:7px'>Contraseña segura</p>";
+                        conOk=true;
+                        
+                    }
+                    return conOk;
+                    
+                    
+                }
+                function contieneNumero(pass){
+                    var hayNumero=true;
+                  
+                   for(i=0;i<pass.length && hayNumero;i++){
+                        if((pass.charCodeAt(i)>=48) && (pass.charCodeAt(i)<=57)){
+                            hayNumero=false;
+                            break;
+                        }
+                    }
+                    return hayNumero;
+                    
+                }
+       
+                function contieneCaracteres(pass){
+                    var contCar=true;
+                    if(pass.includes("@")||pass.includes("_")||pass.includes("-")||pass.includes("#")|| pass.includes("%")||pass.includes("&")||pass.includes("$")){
+                          //mensajeConstrasenya="<p style='margin-left:7px'>Contraseña segura</p>";
+                            contCar=true;
+                       
+                    }else{
+                       // mensajeConstrasenya+=" y "+"debe haber @ o _ o - o # o $ o % o &";
+                        contCar=false;
+                       }
+                    return contCar;
+                }
+        
+      
+                    
+    </script>
+    <body>
+    <div id="container">
+    <main>
+        <h2>¿Quien somos?</h2>
+        <img src="images/estadio.jpg" alt="wellcome"/>
+        <p>La asociación Mundo deportivo fue fundada en el año 2005 y su sede local se encuentra en Mahón, calle xx  166. Actualmente, la organización cuenta con más de 100 asociados de todas las edades y sexo.</p>
+    </main>
+ 
+        <aside>
+            <h2>Últimas noticias</h2>
+            <a href="#">
+            <div id="aside_post">
+              <h4>Título de la noticias número 1</h4>
+                    <img src="images/fotocampo.jpg" alt="wellcome"/>
+                </a>
+                    <p>La asociación Mundo deportivo fue fundada en el año 2005 y su sede local se encuentra en Mahón, calle xx 166. Actualmente, la organización cuenta con más de 100 asociados de todas las edades y sexo.
+                </p>
+            </div>
+            <h2>Login</h2>
+               <div id="form_login">
+            <label for="nombre">Nombre: </label>
+            <input type="type" id="nombre" placeholder=" Su nombre"/>
+            <label for="nombre" id="pass_label">Contraseña: </label>
+            <input type="password" id="pass" placeholder=" Su contraseña"/>
+            <button  id="acceder" onclick="procesarPassword()">Acceder</button>
+    </div>
+        </aside>
+    </div>
+    </body>
+    <!--  Modal -->
+   <!--  <a href="#open-modal"></a>-->
+<div id="open-modal" class="modal-window">
+  <div>
+    <a href="#modal-close" title="Close" class="modal-close">close &times;</a>
+    <h1>Welcome</h1>
+    <div>Bienvenid@ a la página web  de  la asociación mundo deportivo !!</div>
+  </div>
+</div>
+  <footer>
+       <p id="texto_footer"></p>
+      <br/>
+      <p id="aviso_legal"> <a href="" onclick="lanzarAvisoLegal()">Aviso legal</a></p>
+  </footer>
+      
+</html>
