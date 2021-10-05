@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<head>
+    <title>BuscaMinas</title>
+    <meta charset="utf-8"/>
+</head>
+<body>
+    <h3>BuscaMinas</h3>
+    <form action="" id="forumlario">
+        <label for="filas">Número de filas: </label>
+        <input type="text" id="filas" placeholder="Introduce un número de filas"/>
+        <label for="columnas">Número de columnas: </label>
+        <input type="text" id="columnas" placeholder="Introduce un número de columnas"/> 
+        <label for="minas">Porcentaje(%) de minas: </label>
+        <input type="text" id="minas" placeholder="Introduce un porcentaje minas"/>
+        <input type="button" value="Jugar" id="play" onclick="jugar()"/> 
+    </form>
+    <div id="display">
+
+    </div>
+
+</body>
+
+<style>
+  
+    body{
+        margin: auto;
+                
+        margin-left: 20px;
+    }
+    #restart{
+        padding: 8px;
+    }
+  
+    form{
+        
+        width:250px;
+        float: left;
+        margin-right: 20px;
+    }
+    form input{
+        height: 18px;
+        width: 250px;
+        margin-bottom: 10px;
+    }
+    #play{
+        height: 25px;
+        width: 80px;
+      
+    }
+    
+    table{
+        border: 1px solid grey;
+    }
+    table tr{
+       
+        border: 1px solid grey;
+    }
+
+    table tr td{
+       width: 30px;
+       height:  30px;
+        border: 1px solid grey;
+        background-color:gray;
+        font-size: 25px;
+        color: grey;
+    }
+ 
+ 
+ 
+</style>
+<script type="text/javascript" src="buscaminas.js"></script>
+</html>
